@@ -37,38 +37,68 @@ source ~/.zshrc
 
 ---
 
-## 🪟 Installation (PowerShell – Windows)
 
-1. Clone this repo or [download `git-shortcuts.ps1`](https://github.com/aroonsekar/git-shortcuts/blob/master/git-shortcuts.ps1)
+## 🪟 Installation (PowerShell – Windows) - A small headache
 
-2. Save it to a known location, e.g.:
+### ✅ 1. Clone or download this repo
+
+Save it somewhere safe, like:
 
 ```
 C:\Users\yourname\git-shortcuts\git-shortcuts.ps1
 ```
 
-3. Enable execution (if not already):
+### ✅ 2. Unblock the script
+
+PowerShell blocks scripts downloaded from the internet. You must unblock it first:
+
+**Option A (GUI):**
+
+- Right-click on `git-shortcuts.ps1` → **Properties**
+- Check the box **“Unblock”** at the bottom
+- Click **Apply** → **OK**
+
+**Option B (Command line):**
+
+```powershell
+Unblock-File "C:\Users\yourname\git-shortcuts\git-shortcuts.ps1"
+```
+
+### ✅ 3. Enable local script execution
+
+Open PowerShell **as Administrator** and run:
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-4. Open your PowerShell profile:
+Choose **[Y]** when prompted.
 
-```powershell
-notepad $PROFILE
-```
+### ✅ 4. Load the shortcuts (temporary)
 
-5. Add this line to the bottom:
+To load the shortcuts into your session:
 
 ```powershell
 . "C:\Users\yourname\git-shortcuts\git-shortcuts.ps1"
 ```
 
-6. Save and restart PowerShell.
+### ✅ 5. (Optional) Auto-load on every new PowerShell session
+
+To make shortcuts always available:
+
+```powershell
+notepad $PROFILE
+```
+
+Then add this line at the bottom of the file:
+
+```powershell
+. "C:\Users\yourname\git-shortcuts\git-shortcuts.ps1"
+```
+
+Save and restart PowerShell.
 
 ---
-
 ## ⚡ Example Usage
 
 **Zsh:**
